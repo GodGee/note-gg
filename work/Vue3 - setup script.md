@@ -53,6 +53,24 @@ const msg = ref("setup script");
 
 虽然是实验性功能，但还是开箱即用，你只需要在`script`上配置`setup`即可。
 
+### 使用setup中的参数
+
+```XML
+<script setup="props, context" lang="ts">
+ 
+<script>
+```
+
+像这样，只要在setup处声明即可自动导入，同时也支持解构语法：
+
+```XML
+<script setup="props, { emit }" lang="ts">
+ 
+<script>
+```
+
+###  
+
 ### 导出变量&方法
 
 在`setup script`里面定义的所有变量都会自动导出。非常方便
@@ -109,6 +127,19 @@ defineProps<{
   content: string
 }>();
 ```
+
+增强的props类型定义：
+
+```
+const props = defineProps<{
+  foo: string
+  bar?: number
+}>()
+
+const emit = defineEmit<(e: 'update' | 'delete', id: number) => void>()
+```
+
+不过注意，采用这种方法将无法使用props默认值。
 
 ### 使用emits - defineEmit
 
@@ -168,3 +199,24 @@ const { slots, attrs } = useContext()
   <div v-super-color />
 </template>
 ```
+
+### await语法支持
+
+在script setup内可以直接使用await语法：
+
+```TypeScript
+<script setup>
+  const post = await fetch(`/api/post/1`).then((r) => r.json())
+</script>
+```
+
+### 获取 slots 和 attrs
+
+```
+<script setup lang="ts">
+  import { useContext } from 'vue'
+
+  const { slots, attrs } = useContext()
+</script>
+```
+
