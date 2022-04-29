@@ -69,8 +69,6 @@ const msg = ref("setup script");
 <script>
 ```
 
-###  
-
 ### 导出变量&方法
 
 在`setup script`里面定义的所有变量都会自动导出。非常方便

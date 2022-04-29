@@ -2,7 +2,7 @@
 
 ##### vue-cli webpack打包后还能看到源码？怎么改 如何避免源码泄露
 
-![img](C:\Users\guoge\Desktop\MyProject\note-gg\work\images\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzNTgzMDY5,size_16,color_FFFFFF,t_70)
+![img](C:\Users\guoge\Desktop\MyProject\note-gg\work\images\37)
 
 ##### vue.js - 解决vue-cli打包后自动压缩代码
 
